@@ -1,0 +1,319 @@
+
+.mutation-lab {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid rgba(183, 148, 246, 0.2);
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse at top right, rgba(111, 77, 170, 0.13), transparent 48%),
+    #0d121f;
+  color: #e5edfa;
+}
+
+.mutation-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 22px;
+}
+
+.mutation-title-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  border: 1px solid rgba(183, 148, 246, 0.3);
+  border-radius: 10px;
+  background: rgba(183, 148, 246, 0.1);
+  color: #c6a8ff;
+}
+
+.mutation-eyebrow {
+  color: #c6a8ff;
+  font: 9px "DM Mono", monospace;
+  letter-spacing: 1.2px;
+}
+
+.mutation-heading h2 {
+  margin: 7px 0 5px;
+  font-size: 19px;
+}
+
+.mutation-heading p {
+  margin: 0;
+  color: #8d9bb3;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.mutation-info {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px;
+  border: 1px solid rgba(87, 229, 239, 0.15);
+  border-radius: 9px;
+  background: rgba(87, 229, 239, 0.04);
+  color: #7bdde7;
+}
+
+.mutation-info strong {
+  color: #dbe6f7;
+  font-size: 12px;
+}
+
+.mutation-info p {
+  margin: 5px 0 0;
+  color: #8998b0;
+  font-size: 10px;
+}
+
+.mutation-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.mutation-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: #b9c5d9;
+  font-size: 11px;
+}
+
+.mutation-controls input,
+.mutation-controls select {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid rgba(137, 158, 190, 0.24);
+  border-radius: 7px;
+  outline: none;
+  background: #101827;
+  color: #e5edfa;
+  font: 12px "DM Mono", monospace;
+}
+
+.mutation-controls input:focus,
+.mutation-controls select:focus {
+  border-color: #b794f6;
+}
+
+.mutation-controls small {
+  color: #7f8da5;
+  font-size: 10px;
+}
+
+.mutation-preview {
+  margin-top: 18px;
+  padding: 15px;
+  border: 1px solid rgba(137, 158, 190, 0.15);
+  border-radius: 9px;
+  background: rgba(8, 15, 28, 0.65);
+}
+
+.mutation-label {
+  display: block;
+  margin-bottom: 13px;
+  color: #8999b3;
+  font: 9px "DM Mono", monospace;
+  letter-spacing: 1px;
+}
+
+.mutation-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mutation-base {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  height: 30px;
+  padding: 0 5px;
+  border: 1px solid color-mix(in srgb, var(--base-color) 25%, transparent);
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--base-color) 8%, transparent);
+  color: var(--base-color);
+  font: 12px "DM Mono", monospace;
+}
+
+.mutation-base.changed-base {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mutation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.run-mutation,
+.reset-mutation {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.run-mutation {
+  border: 1px solid rgba(183, 148, 246, 0.35);
+  background: rgba(183, 148, 246, 0.14);
+  color: #d3bbff;
+}
+
+.run-mutation:hover {
+  background: rgba(183, 148, 246, 0.23);
+}
+
+.run-mutation:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.reset-mutation {
+  border: 1px solid rgba(137, 158, 190, 0.2);
+  background: transparent;
+  color: #aab8ce;
+}
+
+.mutation-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 16px;
+  padding: 13px;
+  border: 1px solid rgba(255, 130, 130, 0.2);
+  border-radius: 8px;
+  color: #ffaaaa;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.mutation-results {
+  margin-top: 22px;
+  padding: 17px;
+  border: 1px solid rgba(87, 229, 239, 0.17);
+  border-radius: 10px;
+  background: rgba(16, 28, 43, 0.6);
+}
+
+.mutation-result-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mutation-result-heading h3 {
+  margin: 7px 0 0;
+  font-size: 15px;
+}
+
+.mutation-type {
+  padding: 6px 9px;
+  border: 1px solid rgba(87, 229, 239, 0.2);
+  border-radius: 20px;
+  color: #83e4ed;
+  font: 10px "DM Mono", monospace;
+}
+
+.mutation-change {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 15px 8px;
+  border-radius: 8px;
+  background: rgba(7, 13, 24, 0.65);
+}
+
+.mutation-change div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.mutation-change span {
+  color: #8493ab;
+  font-size: 9px;
+}
+
+.mutation-change strong {
+  font: 22px "DM Mono", monospace;
+}
+
+.mutation-change > svg {
+  color: #91a0b9;
+}
+
+.mutation-message {
+  color: #c4d0e3;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.mutation-disclaimer {
+  color: #8997ae;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.mutation-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.mutation-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #b7c4d8;
+  font: 11px "DM Mono", monospace;
+}
+
+.mutation-legend i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+@media (max-width: 520px) {
+  .mutation-lab {
+    padding: 14px;
+  }
+
+  .mutation-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .mutation-base {
+    min-width: 21px;
+    height: 27px;
+    font-size: 11px;
+  }
+
+  .mutation-change {
+    gap: 6px;
+  }
+
+  .mutation-change strong {
+    font-size: 18px;
+  }
+}

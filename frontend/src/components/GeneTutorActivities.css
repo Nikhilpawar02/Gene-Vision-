@@ -1,0 +1,277 @@
+.gene-activities {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #34465c;
+  border-radius: 14px;
+  background: #0c1625;
+  color: #e6efff;
+}
+
+.activity-heading > span,
+.pathway-detail > span,
+.quiz-results > span {
+  color: #5eead4;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.activity-heading h3 {
+  margin: 6px 0;
+  font-size: 1.1rem;
+}
+
+.activity-heading p,
+.pathway-explorer > p,
+.activity-note {
+  color: #a9b8cb;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.activity-tabs,
+.concept-buttons,
+.pathway-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.activity-tabs button,
+.concept-buttons button,
+.pathway-controls button,
+.quiz-next {
+  padding: 9px 12px;
+  border: 1px solid #35475d;
+  border-radius: 9px;
+  background: #172438;
+  color: #e6efff;
+  cursor: pointer;
+}
+
+.activity-tabs button.active,
+.concept-buttons button.selected {
+  background: #134e4a;
+  border-color: #2dd4bf;
+  color: #ccfbf1;
+}
+
+.concept-card {
+  padding: 18px;
+  border: 1px solid #2b4057;
+  border-radius: 12px;
+  background: #122033;
+}
+
+.concept-symbol {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.concept-card > span {
+  color: #5eead4;
+  font-size: 0.8rem;
+}
+
+.concept-card h4,
+.pathway-detail h4,
+.quiz-panel h4 {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.concept-card p,
+.pathway-detail p,
+.quiz-panel p {
+  line-height: 1.6;
+}
+
+.concept-example,
+.concept-fact {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #1b2a40;
+}
+
+.concept-example p,
+.concept-fact p {
+  margin-bottom: 0;
+  color: #c2cede;
+}
+
+.pathway-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.pathway-steps button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 6px;
+  border: 1px solid #35475d;
+  border-radius: 10px;
+  background: #172438;
+  color: #e6efff;
+  cursor: pointer;
+}
+
+.pathway-steps button.current {
+  border-color: #2dd4bf;
+  background: #134e4a;
+}
+
+.pathway-number {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: #25374e;
+}
+
+.pathway-detail {
+  padding: 16px;
+  border-radius: 12px;
+  background: #122033;
+}
+
+.pathway-controls {
+  justify-content: space-between;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.quiz-progress {
+  margin-bottom: 12px;
+  color: #5eead4;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 9px;
+  margin: 14px 0;
+}
+
+.quiz-options button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #35475d;
+  border-radius: 10px;
+  background: #172438;
+  color: #e6efff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.quiz-options button.chosen {
+  border-color: #2dd4bf;
+  background: #134e4a;
+}
+
+.quiz-options button > span {
+  display: grid;
+  flex: 0 0 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 7px;
+  background: #293b51;
+  font-weight: 700;
+}
+
+.quiz-feedback {
+  padding: 12px;
+  border-left: 3px solid #2dd4bf;
+  background: #122b32;
+  color: #d5f5ef;
+  font-size: 0.9rem;
+}
+
+.quiz-next {
+  margin-top: 10px;
+  background: #0f766e;
+  border-color: #14b8a6;
+}
+
+.quiz-results {
+  padding: 14px 0;
+  text-align: center;
+}
+
+.activity-note {
+  margin-top: 14px;
+  font-size: 0.75rem;
+}
+
+.tutor-markdown {
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+
+.tutor-markdown h1,
+.tutor-markdown h2,
+.tutor-markdown h3 {
+  margin: 18px 0 8px;
+  line-height: 1.35;
+}
+
+.tutor-markdown p {
+  margin: 8px 0;
+}
+
+.tutor-markdown ul,
+.tutor-markdown ol {
+  padding-left: 24px;
+}
+
+.tutor-markdown li {
+  margin: 5px 0;
+}
+
+.tutor-markdown table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.tutor-markdown th,
+.tutor-markdown td {
+  padding: 9px;
+  border: 1px solid #35475d;
+  text-align: left;
+}
+
+.tutor-markdown th {
+  background: #1b2a40;
+}
+
+.tutor-markdown blockquote {
+  margin: 12px 0;
+  padding: 8px 14px;
+  border-left: 3px solid #2dd4bf;
+  color: #c2cede;
+  background: #122033;
+}
+
+@media (max-width: 520px) {
+  .pathway-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gene-activities {
+    padding: 12px;
+  }
+}

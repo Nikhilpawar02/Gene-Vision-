@@ -1,0 +1,976 @@
+
+/* =========================================================
+   GENEVISION - SHARED COMPONENT STYLES
+   ========================================================= */
+
+.dna-explorer,
+.dna-sequence-panel,
+.expression3d,
+.gene-explorer-3d,
+.gene3d-page {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.dna-explorer *,
+.dna-sequence-panel *,
+.expression3d *,
+.gene-explorer-3d *,
+.gene3d-page * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   1. DNA EXPLORER
+   ========================================================= */
+
+.dna-explorer {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid rgba(87, 229, 239, 0.2);
+  border-radius: 14px;
+  background:
+    radial-gradient(
+      ellipse at 80% 0%,
+      rgba(65, 102, 180, 0.13),
+      transparent 48%
+    ),
+    #0d121f;
+  color: #e5edfa;
+  overflow: hidden;
+}
+
+.dna-explorer-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.dna-eyebrow,
+.dna-info-label {
+  display: block;
+  color: #7bdde7;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+.dna-explorer-heading h2 {
+  margin: 9px 0 6px;
+  font-size: 19px;
+}
+
+.dna-explorer-heading p {
+  margin: 0;
+  color: #8d9bb3;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.dna-live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid rgba(160, 175, 200, 0.2);
+  border-radius: 20px;
+  color: #9ba8bc;
+  font: 9px "DM Mono", monospace;
+}
+
+.dna-live-status.online {
+  color: #7de8b8;
+}
+
+.dna-live-status.offline {
+  color: #ff9e9e;
+}
+
+.dna-status-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* DNA 3D canvas */
+
+.dna-canvas {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(87, 229, 239, 0.13);
+  border-radius: 10px;
+  background: #080d18;
+}
+
+.dna-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.dna-canvas-hint {
+  position: absolute;
+  z-index: 2;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 10px;
+  border: 1px solid rgba(130, 160, 190, 0.2);
+  border-radius: 6px;
+  background: rgba(8, 13, 24, 0.85);
+  color: #a3b2c9;
+  font-size: 10px;
+  pointer-events: none;
+}
+
+/* DNA information */
+
+.dna-sequence-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.dna-sequence-info > div {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(130, 160, 190, 0.14);
+  border-radius: 8px;
+  background: rgba(19, 29, 46, 0.7);
+}
+
+.dna-sequence-info strong {
+  display: block;
+  margin-top: 9px;
+  overflow-wrap: anywhere;
+  color: #e3ebf8;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* DNA legends */
+
+.dna-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin: 18px 0;
+  padding: 10px 5px;
+  font-size: 13px;
+}
+
+.dna-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #b7c4d8;
+  font: 11px "DM Mono", monospace;
+}
+
+.dna-legend i {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+/* DNA sequence */
+
+.dna-sequence-box {
+  padding: 16px;
+  border: 1px solid rgba(87, 229, 239, 0.15);
+  border-radius: 8px;
+  background: rgba(8, 15, 28, 0.75);
+}
+
+.dna-bases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.dna-bases span {
+  font: 12px "DM Mono", monospace;
+}
+
+.dna-disclaimer {
+  margin: 15px 0 0;
+  color: #8795ac;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.dna-loading,
+.dna-error {
+  padding: 28px 16px;
+  border: 1px solid rgba(130, 160, 190, 0.15);
+  border-radius: 8px;
+  color: #aab7cb;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.dna-error {
+  color: #ffadad;
+}
+
+.dna-error button {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 150, 150, 0.3);
+  border-radius: 6px;
+  background: transparent;
+  color: #ffadad;
+  cursor: pointer;
+}
+
+/* =========================================================
+   2. DNA SEQUENCE PANEL
+   ========================================================= */
+
+.dna-sequence-panel {
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid rgba(96, 165, 250, 0.22);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.96),
+    rgba(10, 15, 32, 0.96)
+  );
+  color: #e5eefc;
+}
+
+.dna-sequence-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dna-sequence-heading h3 {
+  margin: 8px 0;
+  font-size: 21px;
+}
+
+.dna-sequence-heading p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.dna-sample-badge {
+  padding: 6px 10px;
+  border: 1px solid rgba(103, 232, 249, 0.25);
+  border-radius: 20px;
+  color: #67e8f9;
+  font-size: 11px;
+}
+
+.dna-base-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 22px 0 12px;
+}
+
+.dna-base-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.dna-base-legend i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.dna-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.55);
+}
+
+.dna-base {
+  width: 35px;
+  height: 39px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(103, 232, 249, 0.25);
+  border-radius: 8px;
+  background: #111c30;
+  color: var(--base-color, #67e8f9);
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.dna-base:hover {
+  transform: translateY(-2px);
+}
+
+.dna-base.codon-active {
+  background: #26354a;
+}
+
+.dna-base.base-selected {
+  outline: 2px solid var(--base-color, #67e8f9);
+  outline-offset: 2px;
+  box-shadow: 0 0 12px rgba(103, 232, 249, 0.3);
+}
+
+.dna-sequence-position {
+  margin-top: 12px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* DNA detail cards */
+
+.dna-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.dna-detail-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.38);
+}
+
+.dna-detail-card span,
+.dna-detail-card small {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.dna-detail-card strong {
+  font-size: 26px;
+  overflow-wrap: anywhere;
+}
+
+.dna-detail-card .dna-codon {
+  color: #67e8f9;
+  letter-spacing: 3px;
+}
+
+.dna-sequence-note {
+  margin: 16px 0 0;
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   3. GENE EXPRESSION 3D
+   ========================================================= */
+
+.expression3d {
+  padding: 22px;
+  background: #091322;
+  border: 1px solid #1d3553;
+  border-radius: 16px;
+  color: #eaf2ff;
+  overflow: hidden;
+}
+
+.expression3d-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.expression3d-header h2 {
+  margin: 8px 0;
+  font-size: 25px;
+}
+
+.expression3d-header p,
+.expression3d-info p {
+  margin: 6px 0;
+  color: #9aacc4;
+}
+
+.expression3d-label {
+  color: #20d9d2;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.expression3d-status {
+  padding: 8px 12px;
+  border: 1px solid #276a50;
+  border-radius: 20px;
+  background: #102b27;
+  color: #39e75f;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* Expression viewer */
+
+.expression3d-viewer {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #1d3553;
+  border-radius: 12px;
+  background: #050b18;
+}
+
+.expression3d-viewer canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.expression3d-overlay {
+  position: absolute;
+  z-index: 2;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #9aacc4;
+  font-size: 11px;
+  pointer-events: none;
+}
+
+/* Expression controls */
+
+.expression3d-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.expression3d-controls button {
+  padding: 11px 15px;
+  border: 1px solid #29425f;
+  border-radius: 8px;
+  background: #101f34;
+  color: #aebfd6;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.expression3d-controls button:hover,
+.expression3d-controls button.active {
+  border-color: #20d9d2;
+  background: #123b50;
+  color: #20d9d2;
+}
+
+.expression3d-info {
+  padding: 18px;
+  border: 1px solid #1d3553;
+  border-radius: 10px;
+  background: #0d1b2d;
+}
+
+.expression3d-info h3 {
+  margin: 9px 0;
+}
+
+.expression3d-sequence {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #07101e;
+  overflow-wrap: anywhere;
+}
+
+.expression3d-sequence span {
+  display: block;
+  margin-bottom: 9px;
+  color: #20d9d2;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.expression3d-sequence strong {
+  color: #eaf2ff;
+  font-family: monospace;
+  line-height: 1.8;
+}
+
+.expression3d-disclaimer {
+  margin-top: 14px;
+  color: #8296ad;
+  font-size: 11px;
+}
+
+/* =========================================================
+   4. LEGACY GENE EXPLORER
+   ========================================================= */
+
+.gene-explorer-3d {
+  min-height: 650px;
+  padding: 20px;
+  color: #e2e8f0;
+}
+
+.gene-explorer-header {
+  margin-bottom: 20px;
+}
+
+.gene-explorer-header h2 {
+  color: #22d3ee;
+  font-size: 25px;
+}
+
+.gene-explorer-header p {
+  color: #94a3b8;
+}
+
+.gene-canvas {
+  width: 100%;
+  height: 520px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #164e63;
+  border-radius: 16px;
+  background: #080d1b;
+}
+
+.gene-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* =========================================================
+   5. GENE EXPLORER 3D - MAIN PAGE
+   ========================================================= */
+
+.gene3d-page {
+  padding: 22px;
+  color: #e2e8f0;
+  overflow: hidden;
+}
+
+.gene3d-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.gene3d-heading h2 {
+  margin: 8px 0;
+  color: #67e8f9;
+  font-size: 27px;
+}
+
+.gene3d-heading p,
+.gene3d-label {
+  color: #94a3b8;
+}
+
+.gene3d-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.gene3d-status {
+  color: #4ade80;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* Main workspace */
+
+.gene3d-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 310px);
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+}
+
+.gene3d-workspace > * {
+  min-width: 0;
+}
+
+/* Main 3D viewer */
+
+.gene3d-viewer {
+  position: relative;
+  width: 100%;
+  height: 590px;
+  min-width: 0;
+  min-height: 350px;
+  overflow: hidden;
+  border: 1px solid #164e63;
+  border-radius: 15px;
+  background: #080d1b;
+}
+
+.gene3d-viewer canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.gene3d-viewer-label {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 18px;
+  color: #67e8f9;
+  font-size: 11px;
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
+.gene3d-controls {
+  position: absolute;
+  z-index: 2;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: #94a3b8;
+  font-size: 11px;
+  pointer-events: none;
+}
+
+/* Side panel */
+
+.gene3d-panel {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #26364d;
+  border-radius: 15px;
+  background: #101a2b;
+}
+
+.gene3d-panel h3,
+.gene3d-sequence h3,
+.gene3d-legend h3 {
+  margin: 0 0 18px;
+  color: #67e8f9;
+  font-size: 15px;
+}
+
+.gene3d-selected-base {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+}
+
+.gene3d-selected-base > span {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.gene3d-selected-base strong,
+.gene3d-selected-base small {
+  display: block;
+}
+
+.gene3d-selected-base small,
+.gene3d-pair small {
+  margin-top: 5px;
+  color: #94a3b8;
+}
+
+.gene3d-info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #26364d;
+  font-size: 13px;
+}
+
+.gene3d-info-row span {
+  color: #94a3b8;
+}
+
+.gene3d-pair {
+  margin: 17px 0;
+  padding: 14px;
+  border-radius: 10px;
+  background: #17263a;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.gene3d-pair h2 {
+  margin: 12px 0;
+  color: #facc15;
+  font-size: 26px;
+}
+
+.gene3d-empty {
+  padding: 30px 10px;
+  color: #94a3b8;
+  font-size: 13px;
+  text-align: center;
+}
+
+.gene3d-empty span {
+  color: #22d3ee;
+  font-size: 38px;
+}
+
+.gene3d-panel select {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 12px;
+  padding: 11px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #080d1b;
+  color: #e2e8f0;
+}
+
+/* Sequence section */
+
+.gene3d-sequence,
+.gene3d-legend {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #26364d;
+  border-radius: 15px;
+  background: #101a2b;
+}
+
+.gene3d-sequence-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.gene3d-base {
+  width: 40px;
+  height: 48px;
+  flex: 0 0 auto;
+  border: 1px solid #334155;
+  border-radius: 7px;
+  background: #080d1b;
+  color: var(--base-color, #67e8f9);
+  cursor: pointer;
+}
+
+.gene3d-base span,
+.gene3d-base small {
+  display: block;
+}
+
+.gene3d-base span {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.gene3d-base small {
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+.gene3d-base.active {
+  border-color: #facc15;
+  background: #3b3416;
+}
+
+/* Legend */
+
+.gene3d-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.gene3d-legend h3 {
+  width: 100%;
+}
+
+.gene3d-legend div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.gene3d-legend div span {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+/* =========================================================
+   6. RESPONSIVE DESIGN
+   ========================================================= */
+
+/* Tablets and smaller laptops */
+
+@media (max-width: 1000px) {
+  .gene3d-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gene3d-viewer {
+    height: 480px;
+  }
+}
+
+/* Tablets */
+
+@media (max-width: 700px) {
+  .expression3d {
+    padding: 14px;
+  }
+
+  .expression3d-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .expression3d-viewer {
+    height: 360px;
+  }
+
+  .expression3d-overlay {
+    flex-direction: column;
+  }
+
+  .gene3d-page {
+    padding: 15px;
+  }
+
+  .gene3d-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .dna-explorer {
+    padding: 14px;
+  }
+
+  .dna-canvas {
+    height: 300px;
+  }
+
+  .dna-sequence-info,
+  .dna-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dna-sequence-panel {
+    padding: 15px;
+  }
+
+  .dna-base {
+    width: 31px;
+    height: 35px;
+  }
+
+  .gene3d-viewer {
+    height: 380px;
+    min-height: 300px;
+  }
+
+  .gene3d-panel {
+    padding: 15px;
+  }
+
+  .gene3d-sequence,
+  .gene3d-legend {
+    padding: 14px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 400px) {
+  .dna-explorer,
+  .dna-sequence-panel,
+  .expression3d {
+    padding: 12px;
+  }
+
+  .gene3d-page {
+    padding: 8px;
+  }
+
+  .gene3d-viewer {
+    height: 320px;
+  }
+
+  .gene3d-selected-base > span {
+    font-size: 38px;
+  }
+
+  .gene3d-base {
+    width: 34px;
+    height: 42px;
+  }
+
+  .expression3d-header h2,
+  .gene3d-heading h2 {
+    font-size: 21px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .dna-explorer *,
+  .dna-sequence-panel *,
+  .expression3d *,
+  .gene3d-page * {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

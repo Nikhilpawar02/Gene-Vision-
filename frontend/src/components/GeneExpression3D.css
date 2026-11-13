@@ -1,0 +1,345 @@
+
+.ge3d-panel {
+  width: 100%;
+  min-width: 0;
+  margin: 22px 0;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(79, 70, 229, 0.13), transparent 45%),
+    #091322;
+  color: #eaf2ff;
+  box-sizing: border-box;
+}
+
+.ge3d-panel * {
+  box-sizing: border-box;
+}
+
+.ge3d-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.ge3d-eyebrow {
+  color: #22d3d2;
+  font: 700 10px "DM Mono", monospace;
+  letter-spacing: 1.7px;
+}
+
+.ge3d-heading h2 {
+  margin: 9px 0;
+  color: #67e8f9;
+  font-size: 23px;
+}
+
+.ge3d-heading p,
+.ge3d-stage-info p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ge3d-live {
+  flex-shrink: 0;
+  padding: 8px 11px;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  border-radius: 20px;
+  color: #4ade80;
+  font: 10px "DM Mono", monospace;
+}
+
+.ge3d-viewer {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 12px;
+  background: #050b18;
+}
+
+.ge3d-viewer canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ge3d-viewer-label,
+.ge3d-viewer-hint {
+  position: absolute;
+  z-index: 2;
+  padding: 8px 11px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 7px;
+  background: rgba(5, 11, 24, 0.8);
+  color: #a5f3fc;
+  font: 10px "DM Mono", monospace;
+  pointer-events: none;
+}
+
+.ge3d-viewer-label {
+  top: 14px;
+  left: 14px;
+  letter-spacing: 1px;
+}
+
+.ge3d-viewer-hint {
+  right: 14px;
+  bottom: 14px;
+  color: #94a3b8;
+}
+
+.ge3d-stage-info {
+  margin-top: 15px;
+  padding: 17px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 10px;
+  background: rgba(15, 29, 48, 0.8);
+}
+
+.ge3d-stage-info span {
+  color: #67e8f9;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 1px;
+}
+
+.ge3d-stage-info h3 {
+  margin: 8px 0;
+  color: #eaf2ff;
+  font-size: 19px;
+}
+
+.ge3d-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.ge3d-controls button {
+  padding: 10px 13px;
+  border: 1px solid #29425f;
+  border-radius: 8px;
+  background: #101f34;
+  color: #cbd5e1;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.ge3d-controls button:hover {
+  border-color: #22d3ee;
+  background: #123b50;
+  color: #67e8f9;
+}
+
+.ge3d-note {
+  margin-top: 15px;
+  color: #8296ad;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+  .ge3d-panel {
+    padding: 14px;
+  }
+
+  .ge3d-heading {
+    flex-direction: column;
+  }
+
+  .ge3d-viewer {
+    height: 350px;
+  }
+
+  .ge3d-viewer-hint {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 400px) {
+  .ge3d-viewer {
+    height: 300px;
+  }
+
+  .ge3d-controls button {
+    flex: 1 1 42%;
+  }
+}
+
+
+.ge3d-atom-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 14px 18px;
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.ge3d-atom-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ge3d-atom-legend i {
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.atom-carbon { background: #b8c2cc; }
+.atom-nitrogen { background: #3b82f6; }
+.atom-oxygen { background: #ef4444; }
+.atom-phosphorus { background: #f59e0b; }
+.atom-hydrogen { background: #facc15; }
+.ge3d-viewer {
+  width: 100%;
+  height: 520px;
+  min-height: 520px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #080d1b;
+}
+
+.ge3d-viewer canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* DNA sequence panel */
+.ge3d-sequence-panel,
+.ge3d-info-panel {
+  padding: 20px;
+  margin-top: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.75);
+}
+
+.ge3d-section-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.ge3d-section-title span {
+  color: #22d3ee;
+}
+
+.ge3d-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.ge3d-sequence-base {
+  width: 34px;
+  height: 36px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-weight: 800;
+  cursor: pointer;
+  background: #1e293b;
+  transition: 0.2s ease;
+}
+
+.ge3d-sequence-base:hover {
+  transform: translateY(-2px);
+  border-color: #94a3b8;
+}
+
+.ge3d-sequence-base.selected {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+  background: #334155;
+  transform: translateY(-2px);
+}
+
+.base-A {
+  color: #4ade80;
+}
+
+.base-T {
+  color: #fb923c;
+}
+
+.base-G {
+  color: #60a5fa;
+}
+
+.base-C {
+  color: #c084fc;
+}
+
+/* Nucleotide information */
+.ge3d-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ge3d-info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-height: 75px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.ge3d-info-card span {
+  color: #94a3b8;
+  font-size: 10px;
+  letter-spacing: 0.7px;
+}
+
+.ge3d-info-card strong {
+  color: #e2e8f0;
+  font-size: 19px;
+}
+
+.ge3d-info-card strong.base-A {
+  color: #4ade80;
+}
+
+.ge3d-info-card strong.base-T {
+  color: #fb923c;
+}
+
+.ge3d-info-card strong.base-G {
+  color: #60a5fa;
+}
+
+.ge3d-info-card strong.base-C {
+  color: #c084fc;
+}
+
+@media (max-width: 650px) {
+  .ge3d-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ge3d-section-title {
+    flex-direction: column;
+  }
+}

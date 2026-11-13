@@ -1,0 +1,948 @@
+
+.hierarchy-page {
+  min-height: 100vh;
+  padding: 28px;
+  color: #e5efff;
+  background:
+    radial-gradient(ellipse at 15% 0%, #14254b 0%, transparent 45%),
+    #070b18;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.hierarchy-header,
+.hierarchy-viewer-heading,
+.hierarchy-controls,
+.hierarchy-live,
+.hierarchy-path,
+.hierarchy-path-item {
+  display: flex;
+  align-items: center;
+}
+
+.hierarchy-header {
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.hierarchy-eyebrow,
+.hierarchy-label {
+  color: #67e8f9;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.hierarchy-header h1 {
+  margin: 8px 0;
+  font-size: clamp(25px, 3vw, 36px);
+}
+
+.hierarchy-subtitle,
+.hierarchy-viewer-heading p {
+  color: #9aacc9;
+  margin: 6px 0 0;
+  line-height: 1.6;
+}
+
+.hierarchy-live {
+  gap: 8px;
+  white-space: nowrap;
+  color: #9fe9d2;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.hierarchy-live span,
+.hierarchy-label-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  display: inline-block;
+  box-shadow: 0 0 12px #34d399;
+}
+
+.hierarchy-path {
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+  padding: 14px;
+  background: #0d1425;
+  border: 1px solid #202e48;
+  border-radius: 12px;
+}
+
+.hierarchy-path-item {
+  gap: 12px;
+}
+
+.hierarchy-step {
+  color: #8fa2c0;
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 7px;
+}
+
+.hierarchy-step.active {
+  background: #15314a;
+  color: #67e8f9;
+}
+
+.hierarchy-path-arrow {
+  color: #526580;
+}
+
+.hierarchy-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(270px, 0.8fr);
+  align-items: start;
+  gap: 22px;
+}
+
+.hierarchy-viewer-card,
+.hierarchy-info-card {
+  border: 1px solid #24324c;
+  border-radius: 16px;
+  background: rgba(13, 20, 37, 0.94);
+  overflow: hidden;
+}
+
+.hierarchy-viewer-heading {
+  justify-content: space-between;
+  padding: 20px 22px;
+}
+
+.hierarchy-viewer-heading h2 {
+  margin: 6px 0 0;
+  font-size: 23px;
+}
+
+.hierarchy-icon-button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: #dbeafe;
+  background: #17243b;
+  border: 1px solid #31415e;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hierarchy-canvas {
+  height: 460px;
+  min-height: 360px;
+  position: relative;
+  overflow: hidden;
+  background: #070b18;
+}
+
+.hierarchy-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.hierarchy-canvas-label,
+.hierarchy-illustration-tag {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #263750;
+  background: rgba(7, 11, 24, 0.84);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  color: #d9e9ff;
+  pointer-events: none;
+}
+
+.hierarchy-canvas-label {
+  left: 14px;
+  bottom: 14px;
+}
+
+.hierarchy-illustration-tag {
+  right: 14px;
+  top: 14px;
+  color: #fcd9a6;
+}
+
+.hierarchy-controls {
+  gap: 9px;
+  flex-wrap: wrap;
+  padding: 16px;
+  border-top: 1px solid #202e48;
+}
+
+.hierarchy-control,
+.hierarchy-next-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 13px;
+  color: #dce8fb;
+  background: #17243b;
+  border: 1px solid #31415e;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.hierarchy-control:hover,
+.hierarchy-icon-button:hover {
+  background: #223654;
+}
+
+.hierarchy-control.primary,
+.hierarchy-next-button {
+  background: #075985;
+  border-color: #0891b2;
+  color: white;
+}
+
+.hierarchy-control.primary:hover,
+.hierarchy-next-button:hover {
+  background: #0369a1;
+}
+
+.hierarchy-hint {
+  margin: 0;
+  padding: 0 18px 18px;
+  color: #8294b1;
+  font-size: 11px;
+}
+
+.hierarchy-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hierarchy-info-card {
+  padding: 20px;
+}
+
+.hierarchy-info-card h2 {
+  font-size: 23px;
+  margin: 10px 0;
+}
+
+.hierarchy-info-card > p {
+  color: #a5b5cf;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.hierarchy-fact {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #121f36;
+  color: #67e8f9;
+}
+
+.hierarchy-fact svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.hierarchy-fact p {
+  margin: 0;
+  color: #bac9df;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.hierarchy-next-button {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.hierarchy-journey-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 18px;
+  opacity: 0.62;
+}
+
+.hierarchy-journey-row > span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #1c2a43;
+  color: #b6c9e5;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.hierarchy-journey-row strong {
+  font-size: 13px;
+}
+
+.hierarchy-journey-row p {
+  margin: 5px 0 0;
+  color: #92a4c0;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.hierarchy-journey-row.active {
+  opacity: 1;
+}
+
+.hierarchy-journey-row.active > span {
+  background: #164e63;
+  color: #a5f3fc;
+}
+
+.hierarchy-disclaimer {
+  margin: 0;
+  padding: 0 4px;
+  color: #8294b1;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+@media (max-width: 950px) {
+  .hierarchy-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hierarchy-canvas {
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hierarchy-page {
+    padding: 15px;
+  }
+
+  .hierarchy-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hierarchy-path {
+    gap: 6px;
+  }
+
+  .hierarchy-path-item {
+    gap: 4px;
+  }
+
+  .hierarchy-step {
+    font-size: 10px;
+    padding: 7px 5px;
+  }
+
+  .hierarchy-path-arrow {
+    font-size: 10px;
+  }
+
+  .hierarchy-canvas {
+    height: 340px;
+    min-height: 340px;
+  }
+
+  .hierarchy-controls {
+    padding: 12px;
+  }
+
+  .hierarchy-control {
+    flex: 1 1 auto;
+  }
+}
+/* DNA transcription module */
+
+.transcription-panel {
+  margin-top: 18px;
+  padding: 22px;
+  border: 1px solid rgba(103, 232, 249, 0.2);
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.96),
+    rgba(30, 41, 59, 0.85)
+  );
+}
+
+.transcription-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.transcription-heading h3 {
+  color: #f1f5f9;
+  font-size: 21px;
+  margin: 8px 0;
+}
+
+.transcription-heading p {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.transcription-badge {
+  color: #67e8f9;
+  background: rgba(8, 145, 178, 0.15);
+  border: 1px solid rgba(103, 232, 249, 0.25);
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.transcription-sequence {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.55);
+  overflow-wrap: anywhere;
+}
+
+.transcription-sequence span {
+  color: #94a3b8;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.transcription-sequence strong {
+  color: #4ade80;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.transcription-sequence .mrna-sequence {
+  color: #f472b6;
+}
+
+.transcription-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.transcription-controls button {
+  border: 1px solid rgba(103, 232, 249, 0.25);
+  border-radius: 9px;
+  padding: 10px 15px;
+  background: rgba(8, 145, 178, 0.13);
+  color: #67e8f9;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.transcription-controls button:hover:not(:disabled) {
+  background: rgba(8, 145, 178, 0.3);
+  transform: translateY(-2px);
+}
+
+.transcription-controls button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.transcription-note {
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .transcription-heading {
+    flex-direction: column;
+  }
+
+  .transcription-controls button {
+    flex: 1 1 40%;
+  }
+}
+
+.gene-process-controls {
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: 14px;
+}
+
+.process-mode-selector,
+.process-playback {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.process-mode-selector button,
+.process-playback button {
+  padding: 10px 18px;
+  color: #cbd5e1;
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.process-mode-selector button.active {
+  color: #fff;
+  background: #0e7490;
+  border-color: #22d3ee;
+}
+
+.process-playback h3 {
+  width: 100%;
+  color: #67e8f9;
+  margin: 4px 0;
+}
+
+.translation-info-panel {
+  display: grid;
+  gap: 18px;
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 14px;
+}
+
+.translation-section h3 {
+  color: #67e8f9;
+  margin: 0 0 14px;
+}
+
+.codon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.codon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 75px;
+  padding: 12px;
+  color: #e2e8f0;
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 9px;
+}
+
+.codon-card strong {
+  color: #fbbf24;
+  font-size: 19px;
+}
+
+.codon-number {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.translation-table-wrap {
+  overflow-x: auto;
+}
+
+.translation-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #e2e8f0;
+}
+
+.translation-table th,
+.translation-table td {
+  padding: 11px;
+  text-align: left;
+  border-bottom: 1px solid #334155;
+}
+
+.translation-table th {
+  color: #a78bfa;
+}
+
+.protein-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+}
+
+.protein-amino,
+.protein-stop {
+  padding: 10px 13px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.protein-amino {
+  color: #052e16;
+  background: #86efac;
+}
+
+.protein-stop {
+  color: #fff;
+  background: #dc2626;
+}
+
+.protein-one-letter {
+  margin-top: 12px;
+  color: #cbd5e1;
+}
+.process-mode-selector {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.process-mode-selector button {
+  padding: 11px 20px;
+  color: #cbd5e1;
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.process-mode-selector button.active {
+  color: white;
+  background: #0e7490;
+  border-color: #22d3ee;
+}
+
+.process-mode-selector button:hover,
+.transcription-controls button:hover {
+  border-color: #22d3ee;
+}
+
+/* Biological hierarchy navigation */
+
+.hierarchy-level-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.hierarchy-level {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  color: #cbd5e1;
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.hierarchy-level.active {
+  color: #ffffff;
+  background: #164e63;
+  border-color: #22d3ee;
+}
+
+.hierarchy-level span {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #334155;
+}
+
+/* Viewer */
+
+.hierarchy-viewer {
+  overflow: hidden;
+  background: #08111f;
+  border: 1px solid #26364b;
+  border-radius: 14px;
+}
+
+.hierarchy-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+}
+
+.hierarchy-canvas {
+  width: 100%;
+  height: 520px;
+  background: #050b18;
+}
+
+.hierarchy-status {
+  color: #67e8f9;
+  font-size: 12px;
+}
+
+.hierarchy-navigation-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+}
+
+.hierarchy-navigation-controls button,
+.transcription-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 15px;
+  color: #e2e8f0;
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hierarchy-navigation-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* DNA sequence */
+
+.dna-sequence-panel,
+.transcription-panel {
+  margin-top: 20px;
+  padding: 22px;
+  background: #0b1424;
+  border: 1px solid #26364b;
+  border-radius: 12px;
+}
+
+.sequence-label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 9px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.sequence-bases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.sequence-base {
+  padding: 8px 10px;
+  background: #172337;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.codon-list,
+.protein-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.codon-chip,
+.protein-chip {
+  padding: 8px 12px;
+  color: #67e8f9;
+  background: #123044;
+  border: 1px solid #155e75;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+.protein-chip {
+  color: #fde68a;
+  background: #422006;
+  border-color: #92400e;
+}
+
+.stop-chip {
+  color: #fecaca;
+  background: #450a0a;
+  border-color: #991b1b;
+}
+
+.sequence-note {
+  margin-top: 15px;
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Gene expression */
+
+.transcription-heading h3 {
+  margin: 8px 0;
+}
+
+.transcription-heading p {
+  color: #94a3b8;
+}
+
+.process-mode-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.process-mode-selector button {
+  padding: 11px 20px;
+  color: #cbd5e1;
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.process-mode-selector button.active {
+  color: white;
+  background: #0e7490;
+  border-color: #22d3ee;
+}
+
+.process-mode-selector button:hover {
+  border-color: #22d3ee;
+}
+
+.transcription-sequence {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 16px;
+  background: #111e30;
+  border-radius: 9px;
+  overflow-wrap: anywhere;
+}
+
+.transcription-sequence span {
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.transcription-sequence strong {
+  color: #67e8f9;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+.transcription-sequence .mrna-sequence {
+  color: #facc15;
+}
+
+.transcription-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+/* Translation information */
+
+.translation-info-panel {
+  margin-top: 22px;
+  padding: 18px;
+  background: #111e30;
+  border: 1px solid #334155;
+  border-radius: 10px;
+}
+
+.translation-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 70px;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #334155;
+  color: #cbd5e1;
+}
+
+.translation-row strong {
+  color: #67e8f9;
+}
+
+.hierarchy-disclaimer {
+  margin-top: 20px;
+  padding: 14px;
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.6;
+  background: #111827;
+  border-radius: 8px;
+}
+
+.hierarchy-label {
+  color: #22d3ee;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+@media (max-width: 650px) {
+  .hierarchy-canvas {
+    height: 380px;
+  }
+
+  .hierarchy-navigation-controls {
+    flex-wrap: wrap;
+  }
+
+  .hierarchy-navigation-controls button {
+    flex: 1;
+  }
+
+  .sequence-base {
+    padding: 6px 8px;
+  }
+}
+.active-codon {
+  border: 2px solid #22d3ee !important;
+  background: rgba(34, 211, 238, 0.15) !important;
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.25);
+  transform: translateY(-2px);
+}
+
+.active-codon-row {
+  background: rgba(34, 211, 238, 0.15);
+  outline: 1px solid rgba(34, 211, 238, 0.5);
+}
+
+.translation-status {
+  color: #22d3ee;
+  font-weight: 600;
+  margin-top: 14px;
+}
